@@ -1,0 +1,106 @@
+.mySlides {
+    display:none;
+    height: 400px;
+    
+}
+
+.flex-container {
+    display: flex;
+  }
+  
+  .flex-container > div {
+    background-color:white;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    background-color: white;
+    color: black;
+  }
+.page{
+    background-color: #FFEEDE;
+    height: 150px;
+    padding: 70px 0;
+}
+.inner_main_menu ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+.inner_main_menu ul li{
+  float: none;
+  display: inline-block;
+}
+.inner_main_menu ul li a{
+font-size: large;
+text-decoration: none;
+display: block;
+padding: 10px 20px;
+}
+#navbar {
+  width: 100vw;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 15px;
+  background-color: white;
+}
+
+#navbar img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+}
+
+.slide-right {
+  width: 100%;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.slide-right p {
+  animation: 2s slide-right;
+  animation-delay: 2s;
+}
+
+@keyframes slide-right {
+   from {
+      margin-left: -300px;
+   }
+
+   to {
+      margin-left: 0%;
+   }
+}
+
+div.slide-up {
+  height: 200px;
+  overflow: hidden;
+}
+
+div.slide-up p {
+  animation: 3s slide-up;
+  margin-top: 0%;
+}
+
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+a img{ 
+  width: 25%;
+}
+.hero-image {
+  
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

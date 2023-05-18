@@ -1,0 +1,97 @@
+{% extends 'Basic.html' %}
+{% block title %} Checkout Page {% endblock %}
+{% block css %}
+.body{
+text-align: center;
+font-size: 3rem;
+}
+.p {
+  border: 2px solid powderblue;
+}
+{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+  <div class="col ">
+    <h2 class="body">  Shopperzz - Check Out Page </h2>
+    <div id='items '>
+      <ul class="list-group my-3" id="items">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="contanier mx-5 my-2 p ">
+  <form action="/shop/checkout" method="post">{% csrf_token %}
+    <input type="hidden" name="itemsJson" id="itemsJson">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="add">Address</label>
+      <input type="text" class="form-control" id="add" name="add" placeholder="1234 Main St">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control" name="zip" id="zip">
+      </div>
+    </div>
+    <div class="form-group col">
+        <label for="no">Mobile No.</label>
+        <input type="tel" class="form-control" id="no" name="no" placeholder="Mobile No.">
+    </div>
+    <button type="submit" class="btn btn-success">Order</button>
+  </form>
+</div>
+{% endblock %}
+{% block js %}
+    <script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    console.log(cart);
+    var sum = 0;
+    if ($.isEmptyObject(cart)) {
+        // If object is empty
+        mystr = "<p>Your cart is empty, please add some items before checking out ! </p>"
+        $('#items').append(mystr);
+    }
+
+    for (item in cart) {
+
+        let name = cart[item][1];
+<!--        let qty = cart[item][0];-->
+        sum = sum + 1;
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                       ${name}
+                    </li>`
+        $('#items').append(mystr);
+    }
+    document.getElementById('cart').innerHTML = sum;
+    $('#itemsJson').val(JSON.stringify(cart));
+
+    {% if thank %}
+    alert('Thanks for placing the order, You can track yor order with id no. {{id}} on our tracker!');
+    localStorage.clear();
+    document.location="/shop";
+    {% endif %}
+    </script>
+{% endblock %}

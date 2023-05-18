@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic</title>
+</head>
+<body BGCOLOR="c1c1c1">
+<section>
+    <h1>WELCOME TO ARITHMETIC OPERATIONS</h1>
+    <form action="/addition" method="POST">
+        {% csrf_token %}
+      <span>Enter first integer : </span>
+      <input type="number" id="num1" name="num1"><br>
+      <span>Enter second integer : </span>
+      <input id="num2" name="num2"><br>
+      <input type="submit" value="Calculate">
+    </form>
+</section>
+
+</body>
+</html>

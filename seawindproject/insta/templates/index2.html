@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  {% load static %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+{% for i in cat %}
+<div class="container">
+    <p>{{ i.name }}</p>
+    <div class="container-fluid" style="  height: 380px; width:1200px; background-color:#282E34;">
+    <div class="row">
+      {% for j in post %}
+        {% if forloop.counter <= 3 %}
+        <p>{{j.name}}</p>
+      <div class="col-md-3 mx-4" style="padding-left:60px;" >
+            <blockquote class="instagram-media" data-instgrm-permalink="{{j.link}}" data-instgrm-version="12"
+                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:10%; padding:0; width:9.375%; width:350px;height:550px;max-height:60%; width:undefinedpx;"></blockquote>
+      </div>
+      {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+<script async src="//www.instagram.com/embed.js"></script>
+
+</html>

@@ -1,0 +1,28 @@
+{% extends 'Basic.html' %}
+
+{% block title %} product display {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+            <img class="img-thumbnail my-5 border border-dark" src='/media/{{view.image}}'>
+            <button type="button" class="btn btn-primary mx-3">Add to cart</button>
+            <button type="button" class="btn btn-primary">Buy Now</button>
+        </div>
+        <div class="col-md-8 my-5">
+
+            <div class="jumbotron">
+                <h2> {{view.name}} </h2>
+            <span>Rs. {{view.price}}</span><br><br>
+            <span>Product Description : {{view.desc}}</span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

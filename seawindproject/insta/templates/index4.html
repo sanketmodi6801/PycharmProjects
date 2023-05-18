@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blah..II</title>
+</head>
+<body>
+{% for i in cat %}
+<div class="container">
+    <p>{{ i.name }}</p>
+    <div class="container-fluid" style="  height: 350px; width:1200px; background-color:#282E34;">
+    <div class="row">
+      {% for j in post %}{% if forloop.counter <= 3 %}
+      <div class="col-md-3 mx-4" style="padding-left:60px;" >
+            <blockquote class="instagram-media" data-instgrm-permalink="{{j.link}}" data-instgrm-version="12"
+                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:10%; padding:0; width:9.375%; width:undefinedpx;height:undefinedpx;max-height:60%; width:undefinedpx;"></blockquote>
+<!--          <iframe src="{{j.link}}" width="320" height="320" frameborder="0" scrolling="no" allowtransparency="true"></iframe>-->
+      </div>
+      {% endif %}   {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+
+</body>
+<script async src="//www.instagram.com/embed.js"></script>
+</html>
+
+
+<!--{% for i in cat %}-->
+<!--<div class="container">-->
+<!--    <p>{{ i.name }}</p>-->
+<!--    <div class="container-fluid" style="  height: 380px; width:1200px; background-color:#282E34;">-->
+<!--    <div class="row">-->
+<!--      {% for j in post[i] %}{% if forloop.counter <= 1 %}-->
+<!--        <p>{{j.name}}</p>-->
+<!--      <div class="col-md-3 mx-4" style="padding-left:60px;" >-->
+<!--            <blockquote class="instagram-media" data-instgrm-permalink="{{j.link}}" data-instgrm-version="12"-->
+<!--                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:10%; padding:0; width:9.375%; width:350px;height:550px;max-height:60%; width:undefinedpx;"></blockquote>-->
+<!--      </div>-->
+<!--      {% endif %}{% endfor %}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--{% endfor %}-->
